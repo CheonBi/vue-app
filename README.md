@@ -1,3 +1,3 @@
 # vue-app
 
-vue + vite + vuetify
+vue + vue-cli + vuetify
