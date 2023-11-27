@@ -1,3 +1,4 @@
 # vue-app
 
-vue + vue-cli + vuetify
+simple vue3 web appliction
+(use vite)
