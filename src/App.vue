@@ -7,7 +7,10 @@ import MainFooter from './components/MainFooter.vue'
 <template>
   <MainHeader/>
 
-  <RouterView/>
+  <div class="appwrapper">
+    <RouterView/>
+  </div>
+  
 
   <MainFooter/>
 

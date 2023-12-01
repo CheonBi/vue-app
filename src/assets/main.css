@@ -10,25 +10,29 @@
   font-weight: normal;
 }
 
-header.header {
+.menu {
   background-color: var(--vt-c-gray);
   display: flex;
   justify-content: space-between;
   color: white;
   height: 65px;
   align-items: center;
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
   opacity: 0.85;
   backdrop-filter: blur(10px);
+}
 
+.appwrapper{
+  display: flex;
+  flex: 1;
 }
 
 .content{
   display: flex;
   flex: 1;
+  flex-direction: column;
   padding-top: 10px;
- 
 }
 
 .main {

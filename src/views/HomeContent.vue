@@ -5,8 +5,7 @@
 <template>
   <div class="content">
     <div class="main">
-      How to Design Page? <br>
-      So Difficult;;
+      How to Design Page? 
     </div>
   </div>
 </template>
