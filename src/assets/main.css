@@ -10,22 +10,10 @@
   font-weight: normal;
 }
 
-.menu {
-  background-color: var(--vt-c-gray);
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  height: 65px;
-  align-items: center;
-  /* position: sticky;
-  top: 0; */
-  opacity: 0.85;
-  backdrop-filter: blur(10px);
-}
-
-.appwrapper{
+.app__wrapper{
   display: flex;
   flex: 1;
+  flex-direction: column;
 }
 
 .content{

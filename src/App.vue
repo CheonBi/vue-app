@@ -5,14 +5,18 @@ import MainFooter from './components/MainFooter.vue'
 </script>
 
 <template>
-  <MainHeader/>
+  
 
-  <div class="appwrapper">
+  <div class="app__wrapper">
+    <MainHeader/>
+    
     <RouterView/>
+
+    <MainFooter/>
   </div>
   
 
-  <MainFooter/>
+  
 
 </template>
 

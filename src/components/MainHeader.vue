@@ -1,8 +1,9 @@
 <template>
-    <header>
-        <div class="header inner">
+    <header class="header__wrap">
+        <div class="header__inner">
             <div class="menu">
                 <h1 class="title">Page Title</h1>
+
                 <nav>
                     <ul>
                         <li>

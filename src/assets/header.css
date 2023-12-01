@@ -1,4 +1,22 @@
-h1.title{
+.header__wrap{
+    position: sticky;
+    top: 0;
+    opacity: 0.85;
+    backdrop-filter: blur(10px);
+}
+
+.menu {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    height: 65px;
+    align-items: center;
+    box-shadow: 0 1px 15px 10px #ddd;
+    padding: 0 32px;
+}
+
+.menu h1{
     color: black;
 }
 
@@ -12,7 +30,7 @@ nav a {
 }
 
 nav li:hover a{
-    color: blue;
+    color: #360136;
 }
 
 nav li a::after{
