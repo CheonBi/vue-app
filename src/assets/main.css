@@ -1,5 +1,6 @@
 @import './base.css';
 @import './header.css';
+@import './footer.css';
 
 #app {
   display: flex;
@@ -29,12 +30,6 @@
   font-size: large;
   font-weight: 500;
 }
-
-footer.footer{
-  display: flex;
-  background-color: darkslateblue;
-}
-
 
 /*
 @media (hover: hover) {

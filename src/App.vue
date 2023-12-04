@@ -13,6 +13,7 @@ import MainFooter from './components/MainFooter.vue'
     <RouterView/>
 
     <MainFooter/>
+    
   </div>
   
 
