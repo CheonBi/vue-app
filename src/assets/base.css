@@ -39,6 +39,11 @@
   --section-gap: 160px;
 }
 
+:root{
+  --header-height: 65px;
+  /* --footer-height:  */
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -60,6 +65,7 @@
   margin: 0;
   font-weight: normal;
 }
+
 
 html{
   height: 100%;
