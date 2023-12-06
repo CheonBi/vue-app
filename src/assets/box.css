@@ -1,0 +1,33 @@
+.box__wrapper{
+    display: flex;
+    flex: 1 0 20rem;
+}
+
+.box__base{
+    margin-top : 5px;
+    margin-bottom : 5px;
+    padding : 10px;
+    border : 1px solid black;
+    border-radius : 5px;
+}
+
+.box__left{
+    margin-left: 10px;
+    margin-right: 5px;
+    flex: 2.725 0 auto;
+}
+
+.box__right{
+    margin-left: 5px;
+    margin-right: 10px;
+    flex: 1 0 auto;
+}
+
+.box__bottom{
+    margin-left: 10px;
+    margin-right: 10px;
+    flex: 1;
+}
+
+
+

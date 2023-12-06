@@ -9,7 +9,7 @@
     background-color: white;
     display: flex;
     justify-content: space-between;
-    height: 65px;
+    height: 50px;
     align-items: center;
     box-shadow: 0 1px 15px 10px #ddd;
     padding: 0 32px;
@@ -17,6 +17,7 @@
 
 .menu h1{
     color: black;
+    font-size: x-large;
 }
 
 nav ul {
@@ -31,12 +32,16 @@ nav ul li{
     width: 100px;
 }
 
+nav ul li.li__home{
+    
+}
+
 nav a {
     color: black;
     text-decoration: none;
     padding: 0.09rem 0.09rem;
     position: relative;
-    line-height: 2rem;
+    line-height: 1.3rem;
     display: inline-block;
 }
 

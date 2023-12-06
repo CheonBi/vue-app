@@ -6,18 +6,18 @@
 
                 <nav>
                     <ul>
-                        <li>
+                        <li class="li__home">
                             <RouterLink to="/">Home</RouterLink>
                         </li>
-                        <li>
+                        <li class="li__menu">
                             <RouterLink to="cat">Menu1</RouterLink>
                         </li>
         
-                        <li>
+                        <li class="li__menu">
                             <RouterLink to="dog">Menu2</RouterLink>
                         </li>
         
-                        <li>
+                        <li class="li__menu">
                             <RouterLink to="rabbit">Menu3</RouterLink>
                         </li>
                     </ul>
