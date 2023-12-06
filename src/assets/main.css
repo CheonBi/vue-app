@@ -8,7 +8,7 @@
   flex-wrap: nowrap;
   margin: 0;
   font-weight: normal;
-  
+  height: 100vh;
 }
 
 .app__wrapper{
@@ -22,7 +22,8 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 10px 15px;
+  padding: 10px 0;
+  margin: 0 auto;
 }
 
 .main {

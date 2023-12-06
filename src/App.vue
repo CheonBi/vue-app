@@ -5,8 +5,6 @@ import MainFooter from './components/MainFooter.vue'
 </script>
 
 <template>
-  
-
   <div class="app__wrapper">
     <MainHeader/>
     
