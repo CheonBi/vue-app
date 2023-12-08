@@ -18,6 +18,7 @@
 .menu h1{
     color: black;
     font-size: x-large;
+    flex: 1 0 150px;
 }
 
 nav ul {
@@ -25,16 +26,15 @@ nav ul {
     display: flex;
     text-align: center;
     padding: 0;
+    flex: 1 1 300px;
 }
 
 nav ul li{
     padding: 0 10px;
     width: 100px;
+    flex: 1 1 50px;
 }
 
-nav ul li.li__home{
-    
-}
 
 nav a {
     color: black;

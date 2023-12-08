@@ -26,7 +26,7 @@
 .box__bottom{
     margin-left: 10px;
     margin-right: 10px;
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 
