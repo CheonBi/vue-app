@@ -1,9 +1,9 @@
-footer{
+footer {
     flex: 0 0 auto;
 }
 
 .menu__footer {
-    background-color: #f8f8f8;
+    background-color: white;
     display: flex;
     justify-content: space-around;
     color: black;

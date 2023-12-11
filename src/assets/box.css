@@ -1,7 +1,12 @@
-.box__wrapper{
+.box__wrapper.row{
     display: flex;
-    flex: 1 0 20rem;
+    margin: 1px 1px;
 }
+
+
+/*
+Box Design
+*/
 
 .box__base{
     margin-top : 5px;
@@ -11,23 +16,51 @@
     border-radius : 5px;
 }
 
-.box__left{
-    margin-left: 10px;
+/*
+Box flex property
+*/
+
+/*
+ - Left Box Part
+*/
+
+.box__wrapper.left{
+    flex: 2.715 0 35rem;
+    flex-direction: column;
+    display: inline-flex;
+    margin-left: 8px;
     margin-right: 5px;
-    flex: 2.725 0 auto;
 }
 
-.box__right{
+.box__base.left__box{
+    display: flex;
+    flex-direction: column;
+    flex: 2 0 25rem;
+}
+
+.box__title.left{
+    flex: 1 0 1rem;
+}
+
+.box__content.left{
+    flex: 2 0 30rem;
+}
+
+
+/*
+ - Right Box Part
+*/
+
+.box__wrapper.light{
+    flex: 1 0 10rem;
+    flex-direction: column;
+    display: inline-flex;
+    margin-right: 8px;
     margin-left: 5px;
-    margin-right: 10px;
-    flex: 1 0 auto;
 }
 
-.box__bottom{
-    margin-left: 10px;
-    margin-right: 10px;
-    flex: 1 0 auto;
+.box__base.light__box{
+    flex: 2 0 25rem;
 }
-
 
 
