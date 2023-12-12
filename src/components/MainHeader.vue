@@ -10,7 +10,7 @@
                             <RouterLink to="/">Home</RouterLink>
                         </li>
                         <li class="li__menu">
-                            <RouterLink to="cat">Menu1</RouterLink>
+                            <RouterLink to="member">Menu1</RouterLink>
                         </li>
                     </ul>
                 </nav>

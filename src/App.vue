@@ -1,9 +1,3 @@
-<script setup>
-import { RouterView } from 'vue-router'
-import MainHeader from './components/MainHeader.vue'
-import MainFooter from './components/MainFooter.vue'
-</script>
-
 <template>
   <div class="app__wrapper">
     <MainHeader/>
@@ -13,11 +7,13 @@ import MainFooter from './components/MainFooter.vue'
     <MainFooter/>
     
   </div>
-  
-
-  
-
 </template>
+
+<script setup>
+import { RouterView } from 'vue-router'
+import MainHeader from './components/MainHeader.vue'
+import MainFooter from './components/MainFooter.vue'
+</script>
 
 <style scoped>
 /**

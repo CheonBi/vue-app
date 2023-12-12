@@ -1,25 +1,11 @@
+/*
+Box flex property
+*/
+
 .box__wrapper.row{
     display: flex;
     margin: 1px 1px;
 }
-
-
-/*
-Box Design
-*/
-
-.box__base{
-    margin-top : 5px;
-    margin-bottom : 5px;
-    padding : 10px;
-    border : 1px solid black;
-    border-radius : 5px;
-    background-color: white;
-}
-
-/*
-Box flex property
-*/
 
 /*
  - Left Box Part
@@ -51,7 +37,7 @@ Box flex property
 .box__title .icon {
     width: 1.5rem;
     height: 1.5rem;
-    background: url('./icons/ico_chart.png') center center no-repeat;
+    background: url('/src/assets/icons/ico_chart.png') center center no-repeat;
     background-size: 100% 100%;
     margin-right: 5px;
     margin-top: 1.5px;

@@ -10,9 +10,9 @@ const router = createRouter({
       component: Home,
     },
     {
-      path: '/cat',
-      name: 'cat',
-      component: () => import('../views/CatContent.vue'),
+      path: '/member',
+      name: 'member',
+      component: () => import('../views/MemberContent.vue'),
     },
   ]
 })
