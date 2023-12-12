@@ -42,7 +42,6 @@ Box flex property
 .box__title.left{
     flex: 1 0 1rem;
     display: flex;
-
 }
 
 .box__content.left{
@@ -79,6 +78,15 @@ Box flex property
 
 .box__base.right__box{
     flex: 2 0 25rem;
+}
+
+.box__title.right{
+    flex: 1 0 1rem;
+    display: flex;
+}
+
+.box__content.right{
+    flex: 2 0 30rem;
 }
 
 
