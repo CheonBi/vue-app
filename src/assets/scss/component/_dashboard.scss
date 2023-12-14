@@ -2,6 +2,15 @@
 Box flex property
 */
 
+.box__base{
+    margin-top : 5px;
+    margin-bottom : 5px;
+    padding : 10px;
+    border : 1px solid black;
+    border-radius : 5px;
+    background-color: white;
+}
+
 .box__wrapper.row{
     display: flex;
     margin: 1px 1px;
@@ -74,5 +83,3 @@ Box flex property
 .box__content.right{
     flex: 2 0 30rem;
 }
-
-

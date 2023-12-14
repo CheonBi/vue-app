@@ -73,6 +73,8 @@ html{
 
 body {
   height: 100%;
+  display: flex;
+  flex-direction: column;
   color: var(--color-text);
   position: relative;
   background: var(--color-background);
