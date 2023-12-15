@@ -11,17 +11,17 @@
             <nav class="header_menu">
                 <ul>
                     <li>
-                        <RouterLink to="/">Menu1</RouterLink>
+                        <RouterLink to="/dash">Overview</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/login">Menu1</RouterLink>
+                        <RouterLink to="/Achart">ChartA</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/d">Menu1</RouterLink>
+                        <RouterLink to="/Bchart">ChartB</RouterLink>
                     </li>
     
                     <li>
-                        <RouterLink to="/f">Menu1</RouterLink>
+                        <RouterLink to="/admin">Admin</RouterLink>
                     </li>
                 </ul>
             </nav>

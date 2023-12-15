@@ -1,4 +1,3 @@
-@forward 'base';
 @forward './component/section';
 @forward './component/dashboard';
 
@@ -12,10 +11,8 @@
   min-height: 100vh;
 }
 
-
 #main_wrapper{
   display: flex;
-  flex-direction: column;
   flex: 1;
-  background-color: aliceblue;
+  background-color: rgb(140, 167, 190);
 }

@@ -6,9 +6,9 @@ Box flex property
     margin-top : 5px;
     margin-bottom : 5px;
     padding : 10px;
-    border : 1px solid black;
+    // border : 1px solid black;
     border-radius : 5px;
-    background-color: white;
+    background-color: #E0E0E0;
 }
 
 .box__wrapper.row{
@@ -16,14 +16,21 @@ Box flex property
     margin: 1px 1px;
 }
 
+.box__total__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
 /*
  - Left Box Part
 */
 
 .box__wrapper.left{
-    flex: 2.715 0 35rem;
+    flex: 2.715 0 15em;
     flex-direction: column;
-    display: inline-flex;
+    display: flex;
     margin-left: 8px;
     margin-right: 5px;
 }
@@ -35,18 +42,18 @@ Box flex property
 }
 
 .box__title.left{
-    flex: 1 0 1rem;
     display: flex;
+    align-items: center;
 }
 
 .box__content.left{
-    flex: 2 0 30rem;
+    flex: 1;
 }
 
 .box__title .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    background: url('/src/assets/icons/ico_chart.png') center center no-repeat;
+    width: 2.1rem;
+    height: 2.1rem;
+    background: url('/src/assets/icon/ico_chart.png') center center no-repeat;
     background-size: 100% 100%;
     margin-right: 5px;
     margin-top: 1.5px;
@@ -54,7 +61,7 @@ Box flex property
 }
 
 .box__title .title{
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
 }
 
@@ -66,7 +73,7 @@ Box flex property
 .box__wrapper.right{
     flex: 1 0 10rem;
     flex-direction: column;
-    display: inline-flex;
+    display: flex;
     margin-right: 8px;
     margin-left: 5px;
 }
@@ -76,10 +83,10 @@ Box flex property
 }
 
 .box__title.right{
-    flex: 1 0 1rem;
     display: flex;
+    align-items: center;
 }
 
 .box__content.right{
-    flex: 2 0 30rem;
+    flex: 1;
 }

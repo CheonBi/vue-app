@@ -1,3 +1,6 @@
+<!-- 
+    로그인과 HomeView를 동시에 수행
+-->
 <template>
     <div class="login">
         <div class="login__content">

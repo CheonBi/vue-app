@@ -1,20 +1,17 @@
 <template>
 
-    <BaseHeader/>
-    <div id="main_wrapper">
-      <RouterView/>
-    </div>
-    <BaseFooter/>
-
-
-
+  <BaseHeader/>
+  <div id="main_wrapper">
+    <RouterView/>
+  </div>
+  <BaseFooter/>
 
 </template>
 
 <script setup>
 import BaseFooter from './components/BaseFooter.vue';
 import BaseHeader from './components/BaseHeader.vue';
- import { RouterView } from 'vue-router';
+import { RouterView } from 'vue-router';
 
 </script>
 
