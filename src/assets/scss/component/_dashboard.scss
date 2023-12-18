@@ -1,7 +1,6 @@
 /*
 Box flex property
 */
-
 .box__base{
     margin-top : 5px;
     margin-bottom : 5px;
@@ -9,84 +8,83 @@ Box flex property
     // border : 1px solid black;
     border-radius : 5px;
     background-color: #E0E0E0;
+
+    &.big__box{
+        display: flex;
+        flex-direction: column;
+        flex: 2 0 25rem;
+    }
+    
+    &.small__box{
+        display: flex;
+        flex-direction: column;
+        flex: 2 0 25rem;
+    }
+    
 }
 
-.box__wrapper.row{
-    display: flex;
-    margin: 1px 1px;
-}
+.box__wrapper{
+    &__total{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+    }
 
-.box__total__wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-}
-
-/*
- - Left Box Part
-*/
-
-.box__wrapper.left{
-    flex: 2.715 0 15em;
-    flex-direction: column;
-    display: flex;
-    margin-left: 8px;
-    margin-right: 5px;
-}
-
-.box__base.left__box{
-    display: flex;
-    flex-direction: column;
-    flex: 2 0 25rem;
-}
-
-.box__title.left{
-    display: flex;
-    align-items: center;
-}
-
-.box__content.left{
-    flex: 1;
-}
-
-.box__title .icon {
-    width: 2.1rem;
-    height: 2.1rem;
-    background: url('/src/assets/icon/ico_chart.png') center center no-repeat;
-    background-size: 100% 100%;
-    margin-right: 5px;
-    margin-top: 1.5px;
+    &__row{
+        display: flex;
+        margin: 1px 1px;
+    }
 
 }
 
-.box__title .title{
-    font-weight: 700;
-    font-size: 1rem;
+
+.box__wrapper{
+    &__big{
+        flex: 2.715 0 15em;
+        flex-direction: column;
+        display: flex;
+        margin-left: 8px;
+        margin-right: 5px;
+    }
+
+    &__small{
+        flex: 1 0 10rem;
+        flex-direction: column;
+        display: flex;
+        margin-right: 8px;
+        margin-left: 5px;
+    }
 }
 
 
-/*
- - Right Box Part
-*/
+.box__content{
+    &__big{
+        flex: 1;
+    }
 
-.box__wrapper.right{
-    flex: 1 0 10rem;
-    flex-direction: column;
-    display: flex;
-    margin-right: 8px;
-    margin-left: 5px;
+    &__small{
+        flex: 1;
+    }
 }
 
-.box__base.right__box{
-    flex: 2 0 25rem;
-}
 
-.box__title.right{
+.box__title{
     display: flex;
     align-items: center;
+
+    .icon{
+        width: 2.1rem;
+        height: 2.1rem;
+        background: url('/src/assets/icon/ico_chart.png') center center no-repeat;
+        background-size: 100% 100%;
+        margin-right: 5px;
+        margin-top: 1.5px;
+    }
+
+    .text{
+        font-weight: 700;
+        font-size: 1rem;
+    }
 }
 
-.box__content.right{
-    flex: 1;
-}

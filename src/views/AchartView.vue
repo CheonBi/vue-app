@@ -1,15 +1,15 @@
 <template>
-  <div class="box__total__wrapper">
-    <div class="box__wrapper row">
-      <div class="box__wrapper left">
-        <div class="box__base left__box">
-          <div class="box__title left">
+  <div class="box__wrapper__total">
+    <div class="box__wrapper__row">
+      <div class="box__wrapper__big">
+        <div class="box__base big__box">
+          <div class="box__title">
             <div class="icon"/>
-            <div class="title">
+            <div class="text">
               A Chart 페이지입니다.
             </div>
           </div>
-          <div class="box__content left">
+          <div class="box__content__big">
             Box inner content
           </div>
         </div>

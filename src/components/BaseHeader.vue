@@ -1,12 +1,19 @@
 <template>
     <div class="header_wrap">
         <div class="header_inner">
-            <div class="header_logo">
-                logo
+            <div class="header_user info">
+                <div class="info_wrap">
+                    <div class="header_user_icon">
+                        icon
+                    </div>
+                    <div class="header_user_id">
+                        user id
+                    </div>
+                </div>
             </div>
 
             <div class="header_name">
-                page name
+                Page Logo with Link
             </div>
             <nav class="header_menu">
                 <ul>

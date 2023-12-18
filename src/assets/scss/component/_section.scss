@@ -15,10 +15,16 @@
     padding: 10px;
 }
 
-.header_logo{
+.header_user.info{
     flex-basis: 50%;
     display: flex;
     justify-content: center;
+}
+
+.info_wrap{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .header_name{
