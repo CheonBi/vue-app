@@ -14,10 +14,16 @@ export default defineConfig({
     }
   },
 
+  server:{
+    proxy:{
+      "/api":"http://localhost:80",
+    }
+  },
+
   css:{
     preprocessorOptions:{
       scss:{
-        additionalData: `@import "@/assets/scss/global.scss";`,
+        // additionalData: `@import "@/assets/scss/global.scss";`,
       }
     }
   }

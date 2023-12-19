@@ -9,6 +9,10 @@
               A Chart 페이지입니다.
             </div>
           </div>
+
+          <div class="datepicker">
+            datepicker
+          </div>
           <div class="box__content__big">
             Box inner content
           </div>
@@ -20,12 +24,35 @@
 
 <script setup>
 
+import {ref} from 'vue';
+
+const str = ref("");
+
+//axios
+
+
+
+
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .chartA{
   flex: 1 1 100vh;
+}
+
+.datepicker{
+  display: flex;
+  background-color: beige;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.box__content__big{
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 </style>

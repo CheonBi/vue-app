@@ -36,10 +36,6 @@ Box flex property
         margin: 1px 1px;
     }
 
-}
-
-
-.box__wrapper{
     &__big{
         flex: 2.715 0 15rem;
         flex-direction: column;
@@ -55,6 +51,7 @@ Box flex property
         margin-right: 8px;
         margin-left: 5px;
     }
+
 }
 
 
