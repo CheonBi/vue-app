@@ -1,6 +1,6 @@
 <template>
   <div class="box__wrapper__total">
-    <div class="box__wrapper__row">
+    <div class="box__wrapper__row admin">
       <div class="box__wrapper__big">
         <div class="box__base big__box">
           <div class="box__title">
@@ -23,5 +23,9 @@
   </script>
   
   <style>
+
+  .admin{
+    flex: 1 1 100vh;
+  }
   
   </style>
