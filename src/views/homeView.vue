@@ -1,15 +1,31 @@
 <template>
     <div>
-        Home
+        {{ test() }}
     </div>
 
 </template>
   
 <script setup>
 
-console.log(import.meta.env.VITE_API_TEST);
+import { ref, onMounted } from 'vue';
 
-  
+
+function api(){
+    const rs = this.msg;
+    console.log(rs);
+    return rs;
+}
+
+function test(){
+    this.axios
+    const t = ref(10);
+    return t;
+}
+
+onMounted(() => {
+    api()
+})
+
 </script>
   
 <style>
