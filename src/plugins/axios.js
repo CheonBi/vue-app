@@ -20,9 +20,9 @@ instance.interceptors.request.use(
         //오류 요청 보내기전 공통 수행
         return Promise.reject(error);
     }
-);
+)
 
-instance.interceptors.response.use({
+instance.interceptors.response.use(
     function (response) {
 
         //응답데이터 가공
@@ -35,6 +35,6 @@ instance.interceptors.response.use({
 
         return Promise.reject(error);
     }
-})
+)
 
 export default instance;

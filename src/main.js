@@ -11,8 +11,12 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-app.config.globalProperties.axios = axios;
-app.config.globalProperties.msg = 'hello';
+
+// app.config.globalProperties.axios = axios;
+// app.config.globalProperties.msg = 'hello';
+
+app.provide("axios", axios);
+app.provide("msg",123);
 
 
 

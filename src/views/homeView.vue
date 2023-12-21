@@ -1,23 +1,24 @@
 <template>
     <div>
-        {{ test() }}
+        {{ plt }}
     </div>
 
 </template>
   
 <script setup>
+import { ref, onMounted, inject} from 'vue';
 
-import { ref, onMounted } from 'vue';
-
+const plt = ref(" ");
 
 function api(){
-    const rs = this.msg;
-    console.log(rs);
-    return rs;
+    const axios = inject('axios');
+    let welcome = axios.get("/api/users")
+        .then((res) => {
+            plt.value = res.data;
+        });
 }
 
 function test(){
-    this.axios
     const t = ref(10);
     return t;
 }
