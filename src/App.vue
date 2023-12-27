@@ -10,8 +10,8 @@
 
 <script setup>
 
-import baseHeader from './components/Base/baseHeader.vue';
-import baseFooter from './components/Base/baseFooter.vue';
+import baseHeader from './components/Base/commonHeader.vue';
+import baseFooter from './components/Base/commonFooter.vue';
 
 
 </script>
