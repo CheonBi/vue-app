@@ -16,7 +16,7 @@ app.use(router)
 // app.config.globalProperties.msg = 'hello';
 
 app.provide("axios", axios);
-app.provide("msg",123);
+app.provide("msg", 123);
 
 
 

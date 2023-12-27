@@ -15,6 +15,9 @@ function api(){
     let welcome = axios.get("/api/users")
         .then((res) => {
             plt.value = res.data;
+        })
+        .catch((res) =>{
+            plt.value = "Check API Connection"
         });
 }
 
