@@ -14,7 +14,7 @@
             datepicker
           </div>
           <div class="box__content__big">
-            Box inner content
+            {{ plt }}
           </div>
         </div>
       </div>
@@ -24,14 +24,24 @@
 
 <script setup>
 
-import {ref} from 'vue';
+import { ref, onMounted, inject} from 'vue';
 
-const str = ref("");
+const plt = ref(" ");
 
-//axios
+function api(){
+    const axios = inject('axios');
+    let welcome = axios.get("/api/users")
+        .then((res) => {
+            plt.value = res;
+        })
+        .catch((res) =>{
+            plt.value = res;
+        });
+}
 
-
-
+onMounted(() => {
+    api()
+})
 
 </script>
 

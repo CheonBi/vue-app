@@ -3,9 +3,9 @@
         <div class="header_inner">
             <div class="header_user info">
                 <div class="info_wrap">
-                    <div class="header_user_icon">
+                    <!-- <div class="header_user_icon">
                         icon
-                    </div>
+                    </div> -->
                     <div class="header_user_id">
                         user id
                     </div>

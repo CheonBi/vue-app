@@ -12,18 +12,15 @@ const plt = ref(" ");
 
 function api(){
     const axios = inject('axios');
-    let welcome = axios.get("/api/users")
+    let welcome = axios.get("/api/users");
+    welcome
         .then((res) => {
             plt.value = res.data;
         })
         .catch((res) =>{
-            plt.value = "Check API Connection"
+            plt.value = res.data;
         });
-}
-
-function test(){
-    const t = ref(10);
-    return t;
+    return welcome
 }
 
 onMounted(() => {

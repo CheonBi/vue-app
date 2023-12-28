@@ -16,8 +16,8 @@ export default defineConfig({
 
   server:{
     proxy:{
-      "/api":"http://localhost:80",
-    }
+    },
+    port: 7173,
   },
 
   css:{
