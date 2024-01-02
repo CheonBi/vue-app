@@ -16,15 +16,13 @@
           <div class="box__content__big">
             <nav>
               <ul>
-                <li v-for="tab in tabs" :key="tab.id">
-                  
-
+                <li v-for="tab in tabs" :key="tab.views">
+                  <a style="cursor: pointer;" :class="{active: tab.views == activeTab}" @click="changeTab(tab.views)">{{tab.title}}</a>
                 </li>
               </ul>
             </nav>
-
             <div>
-
+              <component :is="activeTab">{{plt}}</component>
             </div>
           </div>
         </div>
@@ -41,6 +39,7 @@ import tableTab from '../components/performanceView/tableTab.vue';
 
 const plt = ref(" ");
 const activeTab = ref("");
+const activeTabTitle = ref("");
 const tabs = reactive([
   {
     title: "chart",
