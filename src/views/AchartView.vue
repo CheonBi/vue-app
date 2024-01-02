@@ -14,7 +14,18 @@
             datepicker
           </div>
           <div class="box__content__big">
-            {{ plt }}
+            <nav>
+              <ul>
+                <li v-for="tab in tabs" :key="tab.id">
+                  
+
+                </li>
+              </ul>
+            </nav>
+
+            <div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -24,9 +35,22 @@
 
 <script setup>
 
-import { ref, onMounted, inject} from 'vue';
+import { ref, onMounted, inject, reactive} from 'vue';
+import chartTab from '../components/performanceView/chartTab.vue';
+import tableTab from '../components/performanceView/tableTab.vue';
 
 const plt = ref(" ");
+const activeTab = ref("");
+const tabs = reactive([
+  {
+    title: "chart",
+    views: "chartTab"
+  },
+  {
+    title: "table",
+    views: "tableTab"
+  }
+])
 
 function api(){
     const axios = inject('axios');
@@ -41,7 +65,10 @@ function api(){
 
 onMounted(() => {
     api()
+    console.log(tabs)
 })
+
+
 
 </script>
 

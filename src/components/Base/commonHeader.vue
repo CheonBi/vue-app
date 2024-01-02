@@ -20,9 +20,11 @@
                     <li>
                         <RouterLink to="/dash">Overview</RouterLink>
                     </li>
+
                     <li>
-                        <RouterLink to="/Achart">ChartA</RouterLink>
+                        <RouterLink to="/Achart">Performance</RouterLink>
                     </li>
+
                     <li>
                         <RouterLink to="/Bchart">ChartB</RouterLink>
                     </li>

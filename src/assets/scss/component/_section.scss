@@ -1,5 +1,6 @@
 // header
 
+
 .header_wrap{
     display: flex;
     background-color: white;
@@ -34,6 +35,7 @@
 }
 
 .header_menu{
+    --nav-main-gap:32px;
     display: flex;
     flex-basis: 50%;
     justify-content: flex-end;
@@ -47,8 +49,7 @@
 }
 
 .header_menu > ul > li{
-    padding: 0 10px;
-    width: 100px
+    padding: 0 calc(var(--nav-main-gap) / 2);
 }
 
 .header_menu a{

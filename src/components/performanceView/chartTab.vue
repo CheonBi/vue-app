@@ -1,0 +1,23 @@
+<template>
+    <div class="performance-tab">
+        <slot></slot>
+    </div>
+
+</template>
+
+<script setup>
+import { defineProps } from 'vue';
+
+</script>
+
+<style lang="scss" scoped>
+.performance-tab{
+    color: #fff;
+    background: linear-gradient(315deg, #42d392 25%, #647eff);
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;  
+}
+</style>
