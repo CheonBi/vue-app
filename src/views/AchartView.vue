@@ -130,6 +130,7 @@ onMounted(() => {
   li.active span{
     background-color: var(--vt-c-gray);
     border-radius: 5px 0 0 0;
+    box-shadow: 1px 1px 1px var(--color-shadow-gray);
   }
 
 }
