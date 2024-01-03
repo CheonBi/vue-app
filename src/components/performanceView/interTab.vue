@@ -2,7 +2,7 @@
     <div class="performance-tab">
         <slot></slot>
         <div class="performance-content">
-            chart
+            inter
         </div>
     </div>
 
@@ -11,7 +11,6 @@
 <script setup>
 
 </script>
-
 
 <style lang="scss" scoped>
 
