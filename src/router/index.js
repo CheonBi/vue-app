@@ -11,7 +11,6 @@ const router = createRouter({
       components: {
         default:Home,
         head:Header,
-        foot:Footer,
       },
     },
     {
@@ -32,6 +31,7 @@ const router = createRouter({
       components: {
         default:() => import('../views/AchartView.vue'),
         head:Header,
+
       },
     },
     {
@@ -39,6 +39,7 @@ const router = createRouter({
       components: {
         default:() => import('../views/BchartView.vue'),
         head:Header,
+
       },
     },
     {
@@ -46,6 +47,7 @@ const router = createRouter({
       components: {
         default: () => import('../views/adminView.vue'),
         head:Header,
+
       },
     },
   ],

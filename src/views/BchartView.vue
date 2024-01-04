@@ -25,23 +25,7 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style>
 
-.chartB{
-  flex: 1 1 100vh;
-}
 
-.datepicker{
-  display: flex;
-  background-color: beige;
-  border-radius: 5px;
-  margin: 5px 0;
-  padding: 5px;
-}
-
-.box__content__big{
-  background-color: white;
-  border-radius: 5px;
-  padding: 5px;
-}
 </style>

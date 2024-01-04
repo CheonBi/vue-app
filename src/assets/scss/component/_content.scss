@@ -85,3 +85,85 @@ Box flex property
     }
 }
 
+
+/* Performance Component */
+
+$circle-point: 0.25rem;
+
+.tabs {
+    ul {
+      position: relative;
+      padding-left: 0.87rem;
+      list-style: none;
+    }
+  
+    li {
+      float: left;
+      width: 10rem;
+    }
+  
+    li span {
+      display: block;
+      text-align: center;
+      margin: 0 0.11rem;
+      font-weight: bold;
+      font-size: 1.3rem;
+      line-height: 1.875;
+      border-radius: 0.4rem 0.4rem 0 0;
+      background-color: var(--color-background-blue-soft);
+    }
+  
+    li.active span {
+      background-color: var(--vt-c-gray);
+      box-shadow: 1px 1px 1px var(--color-shadow-gray);
+    }
+  }
+
+  .chartA {
+    flex: 1 1 100vh;
+    margin-top: 0.43rem;
+
+    .datepicker {
+      display: flex;
+      margin: 5px 0;
+      padding: 5px;
+    }
+    
+    .big__box {
+      padding: 0;
+      margin-top: 0px;
+      border-radius: $circle-point $circle-point;
+    }
+    
+    .box__content__big {
+      padding: 5px;
+    }
+    
+    .con {
+      color: var(--vt-c-black);
+      padding: 0 5px;
+    }
+  }
+
+
+  /* Event Component*/
+  .chartB{
+    flex: 1 1 100vh;
+
+    .datepicker{
+      display: flex;
+      margin: 5px 0;
+      padding: 5px;
+    }
+
+    .big__box{
+        
+    }
+    
+    .box__content__big{
+        background-color: white;
+        border-radius: 5px;
+        padding: 5px;
+    }
+  }
+  

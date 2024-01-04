@@ -1,19 +1,8 @@
 <template>
     <div class="header_wrap">
         <div class="header_inner">
-            <div class="header_user info">
-                <div class="info_wrap">
-                    <!-- <div class="header_user_icon">
-                        icon
-                    </div> -->
-                    <div class="header_user_id">
-                        user id
-                    </div>
-                </div>
-            </div>
-
             <div class="header_name">
-                Page Logo with Link
+                In sagittis elit
             </div>
             <nav class="header_menu">
                 <ul>
@@ -34,6 +23,18 @@
                     </li>
                 </ul>
             </nav>
+
+            <div class="header_info">
+                <div class="info_wrap">
+                    <div class="user_id">
+                        user id
+                    </div>
+
+                    <div class="cur_time">
+                        current time size
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>

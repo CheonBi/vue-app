@@ -1,5 +1,6 @@
 <template>
 
+
 <RouterView name="head"/>
 
 <div id="main_wrapper">
