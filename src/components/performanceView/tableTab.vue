@@ -2,7 +2,7 @@
     <div class="performance-tab">
         <slot></slot>
         <div class="performance-content">
-            table
+            
         </div>
     </div>
 

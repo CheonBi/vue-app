@@ -41,7 +41,6 @@
 import { shallowRef, ref, onMounted, inject } from 'vue';
 import chartTab from '../components/performanceView/chartTab.vue';
 import tableTab from '../components/performanceView/tableTab.vue';
-import interTab from '../components/performanceView/interTab.vue';
 
 const plt = ref("");
 const activeTab = shallowRef(chartTab);
@@ -66,6 +65,7 @@ function api() {
     .catch((res) => {
       plt.value = res;
     });
+    return welcome;
 }
 
 function changeTab(tab) {
@@ -75,8 +75,6 @@ function changeTab(tab) {
 onMounted(() => {
   api()
 })
-
-
 
 </script>
 

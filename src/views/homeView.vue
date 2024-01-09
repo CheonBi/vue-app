@@ -1,5 +1,9 @@
 <template>
-    <div>
+    <div id="home">
+        {{ plt }}
+    </div>
+
+    <div id="home">
         {{ plt }}
     </div>
 
@@ -15,10 +19,10 @@ function api(){
     let welcome = axios.get("/api/users");
     welcome
         .then((res) => {
-            plt.value = res.data;
+            plt.value = res;
         })
         .catch((res) =>{
-            plt.value = res.data;
+            plt.value = res;
         });
     return welcome
 }
@@ -30,5 +34,7 @@ onMounted(() => {
 </script>
   
 <style>
-  
+#home{
+    flex: 1;
+}
 </style>
