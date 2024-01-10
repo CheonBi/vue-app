@@ -3,17 +3,17 @@
     <div class="box__wrapper__row chartB">
       <div class="box__wrapper__big">
         <div class="box__base big__box">
-          <div class="box__title">
-            <div class="icon"/>
-            <div class="text">
-              B Chart 페이지입니다.
-            </div>
-          </div>
           <div class="datepicker">
             datepicker
           </div>
           <div class="box__content__big">
-            Box inner content
+              <table border="0" cellpadding="0" cellspacing="0" summary="0">
+                <thead>
+                  <tr>
+                     
+                  </tr>
+                </thead>
+              </table>
           </div>
         </div>
       </div>
@@ -22,6 +22,10 @@
 </template>
 
 <script setup>
+
+import tableTab from '../components/eventView/tableTab.vue';
+
+
 
 </script>
 

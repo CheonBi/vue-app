@@ -1,23 +1,20 @@
 <template>
     <div class="performance-tab">
-        <slot></slot>
+        <span></span>
         <div class="performance-content">
-            chart
+            
         </div>
     </div>
 
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 
-const props = defineProps(['data'])
+const props = defineProps(['axiosRes']);
 
 </script>
 
-
 <style lang="scss" scoped>
-
 .performance-tab{
     border: 1px solid var(--color-border);
 }
@@ -25,4 +22,9 @@ const props = defineProps(['data'])
 .performance-tab, .performance-content{
     color: var(--vt-c-black);
 }
+
+#text{
+    display: block;
+}
+
 </style>

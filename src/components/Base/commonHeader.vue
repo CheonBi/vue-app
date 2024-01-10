@@ -11,11 +11,11 @@
                     </li>
 
                     <li>
-                        <RouterLink to="/Achart">Performance</RouterLink>
+                        <RouterLink to="/performance">Performance</RouterLink>
                     </li>
 
                     <li>
-                        <RouterLink to="/Bchart">ChartB</RouterLink>
+                        <RouterLink to="/event">Event</RouterLink>
                     </li>
     
                     <li>

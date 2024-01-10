@@ -27,17 +27,17 @@ const router = createRouter({
       },
     },
     {
-      path: "/Achart",
+      path: "/performance",
       components: {
-        default:() => import('../views/AchartView.vue'),
+        default:() => import('../views/performanceView.vue'),
         head:Header,
 
       },
     },
     {
-      path: "/Bchart",
+      path: "/event",
       components: {
-        default:() => import('../views/BchartView.vue'),
+        default:() => import('../views/eventView.vue'),
         head:Header,
 
       },

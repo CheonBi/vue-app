@@ -26,7 +26,7 @@
             </div>
             <div class="con">
               <KeepAlive>
-                <component :is="activeTab">{{ plt }}</component>
+                <component :is="activeTab" v-bind:axiosRes="tabs">{{plt}}</component>
               </KeepAlive>
             </div>
           </div>
@@ -44,17 +44,21 @@ import tableTab from '../components/performanceView/tableTab.vue';
 
 const plt = ref("");
 const activeTab = shallowRef(chartTab);
+const activeBind = ref("");
 
 const tabs = [
   {
     title: "chart",
-    views: chartTab
+    views: chartTab,
+    bindname: "bindingchart"
   },
   {
     title: "table",
-    views: tableTab
+    views: tableTab,
+    bindname: "bindingtable"
   },
 ]
+
 
 function api() {
   const axios = inject('axios');
@@ -73,7 +77,7 @@ function changeTab(tab) {
 }
 
 onMounted(() => {
-  api()
+  plt.value = api();
 })
 
 </script>
