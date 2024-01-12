@@ -1,93 +1,112 @@
 <template>
-    <div class="performance-tab">
-        <table class="performance-content" border="0" cellpadding="0" cellspacing="0" summary="">
-            <thead>
-                <tr v-for="header in performanceHeaders">
-                    <th v-if="header.row === true" :rowspan="header.span">
-                        {{ header.name }}
-                    </th>
-                </tr>
-            </thead>
-            <!-- <span id="text" v-for="prop in props.axiosRes" :key="prop.id"> {{ prop.name }} </span> -->
-        </table>
-    </div>
+  <table class="performance-content" border="0" cellpadding="0" cellspacing="0" summary="">
+    <thead>
+      <tr>
+        <template v-for="(header, index) in performanceHeaders" :key="header.name">
+          <th :rowspan="header.row" :colspan="header.col">
+            {{ header.name }}
+          </th>
+        </template>
+      </tr>
+      <tr>
+        <th v-for="(sub, index) in subperformanceHeaders" :key="sub">
+          {{ sub }}
+        </th>
+      </tr>
+    </thead>
 
+    <tbody>
+      <tr v-for="(v, index) in props.axiosRes" :key="v.title">
+        <td>
+          {{ v.title }}
+        </td>
+        <td>
+          {{ v.views.__name }}
+        </td>
+      </tr>
+    </tbody>
+    <!-- <span id="text" v-for="prop in props.axiosRes" :key="prop.id"> {{ prop.name }} </span> -->
+  </table>
 </template>
 
 <script setup>
+
+import { ref } from 'vue';
 
 const props = defineProps(['axiosRes']);
 const performanceHeaders = [
   {
     name: "Fusce",
-    row: true,
-    span: 2,
-    id: 1,
+    row: 2, col: 1,
   },
   {
     name: "laoreet",
-    row: true,
-    span: 2,
-    id: 2,
+    row: 2, col: 1,
   },
   {
     name: "iaculis",
-    row: true,
-    span: 2,
-    id: 3,
+    row: 2, col: 1,
   },
   {
     name: "arcu",
-    row: true,
-    span: 2,
-    id: 4,
+    row: 2, col: 1,
   },
   {
     name: "ac rutrum",
-    row: false,
-    span: 3,
-    id: 5,
+    row: 1, col: 3,
   },
   {
     name: "Vivamus",
-    row: true,
-    span: 2,
-    id: 6,
+    row: 2, col: 1,
   },
   {
     name: "Praesent",
-    row: true,
-    span: 2,
-    id: 7,
+    row: 2, col: 1,
   },
   {
     name: "tincidunt",
-    row: true,
-    span: 2,
-    id: 8,
+    row: 2, col: 1,
   },
+]
+
+const subperformanceHeaders = [
+  "Quisque",
+  "aliquam",
+  "ante"
 ]
 
 </script>
 
 <style lang="scss" scoped>
-.performance-tab{
-    border: 1px solid var(--color-border);
-}
+.performance-content {
+  padding: 0 40px;
+  color: var(--vt-c-black);
 
-.performance-tab, .performance-content{
-    color: var(--vt-c-black);
-}
+  thead th {
+    border-bottom: 0.2rem solid var(--tb-header-border);
+    text-align: center;
+    line-height: 3.8rem;
+    font-weight: bold;
+    color: var(--tb-header-text);
+    background-color: var(--tb-header-background);
+    font-size: 1.4rem !important;
+  }
 
-#text{
-    display: block;
-}
+  thead th:nth-child(n):not(:nth-child(5)) {
+    width: 18rem;
+  }
 
-table tbody tr td{
+  thead :nth-child(5) {
+    width: 54rem;
+  }
+
+  tbody td{
+    border-bottom: 1px solid var(--tb-body-border);
+    text-align: center;
     font-size: 1.5rem;
-    color: #d0dcf7;
-    background: #282f42;
+    line-height: 4rem;
+    color: var(--tb-body-text);
+    background: var(--tb-body-background);
+  }
 }
-
-
 </style>

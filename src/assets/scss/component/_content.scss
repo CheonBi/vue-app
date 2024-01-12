@@ -12,13 +12,13 @@ Box flex property
     &.big__box{
         display: flex;
         flex-direction: column;
-        flex: 1 0 25rem;
+        flex: 1 0 35rem;
     }
     
     &.small__box{
         display: flex;
         flex-direction: column;
-        flex: 1 0 25rem;
+        flex: 1 0 35rem;
     }
     
 }
@@ -93,22 +93,21 @@ $circle-point: 0.25rem;
 .tabs {
     ul {
       position: relative;
-      padding-left: 0.87rem;
+      padding-left: 0;
       list-style: none;
     }
   
     li {
       float: left;
-      width: 10rem;
+      width: 20rem;
     }
   
     li span {
       display: block;
       text-align: center;
-      margin: 0 0.11rem;
       font-weight: bold;
-      font-size: 1.3rem;
-      line-height: 1.875;
+      font-size: 1.8rem;
+      line-height: 4.9rem;
       border-radius: 0.4rem 0.4rem 0 0;
       background-color: var(--color-background-blue-soft);
     }
@@ -121,29 +120,34 @@ $circle-point: 0.25rem;
 
   .chartA {
     flex: 1 1 100vh;
-    margin-top: 0.43rem;
+    margin: 5px;
 
     .datepicker {
       display: flex;
       margin: 5px 0;
-      padding: 5px;
+      padding: 40px;
     }
     
     .big__box {
       padding: 0;
       margin-top: 0px;
-      border-radius: $circle-point $circle-point;
+      border-radius: 0 $circle-point $circle-point $circle-point;
     }
     
     .box__content__big {
-      padding: 5px;
+      padding: 0;
     }
     
     .con {
       color: var(--vt-c-black);
-      padding: 0 5px;
+      padding: 0;
     }
   }
+
+  
+  /**
+  
+  **/
 
 
   /* Event Component*/

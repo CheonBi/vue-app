@@ -24,7 +24,13 @@
     --vt-c-text-dark-1: var(--vt-c-white);
     --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
-    /*  */
+    /* table color variables */
+    --tb-header-border: #404654;
+    --tb-header-background: #1f2535;
+    --tb-header-text: white;
+    --tb-body-border: #2b3140;
+    --tb-body-background: #232939;
+    --tb-body-text: #d0dcf7;
   }
   
   /* semantic color variables for this project */
@@ -76,11 +82,11 @@
   }
   
   html, body{
-    height: 100%;
+    font-size: 10px;
+    height: 120%;
   }
   
   body {
-    height: 100%;
     color: var(--color-text);
     position: relative;
     background: var(--color-background);
@@ -106,5 +112,9 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  td, th{
+    text-align: center;
   }
   

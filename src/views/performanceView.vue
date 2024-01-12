@@ -3,10 +3,6 @@
     <div class="box__wrapper__row chartA">
       <div class="box__wrapper__big">
         <div class="box__title">
-          <!-- <div class="icon"/>
-            <div class="text">
-              A Chart 페이지입니다.
-            </div> -->
           <div class="tabs">
             <ul>
               <li v-for="tab in tabs" :key="tab.views" style="cursor: pointer;" :class="{ active: tab.views === activeTab }"
@@ -26,7 +22,7 @@
             </div>
             <div class="con">
               <KeepAlive>
-                <component :is="activeTab" v-bind:axiosRes="tabs">{{plt}}</component>
+                <component :is="activeTab" v-bind:axiosRes="tabs"> </component>
               </KeepAlive>
             </div>
           </div>
@@ -50,12 +46,10 @@ const tabs = [
   {
     title: "chart",
     views: chartTab,
-    bindname: "bindingchart"
   },
   {
     title: "table",
     views: tableTab,
-    bindname: "bindingtable"
   },
 ]
 
