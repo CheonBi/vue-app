@@ -15,8 +15,8 @@ import { ref, onMounted, inject} from 'vue';
 const plt = ref(" ");
 
 function api(){
-    const axios = inject('axios');
-    let welcome = axios.get("/api/users");
+    const axios = inject('$axios');
+    let welcome = axios.post("/api/users");
     welcome
         .then((res) => {
             plt.value = res;
