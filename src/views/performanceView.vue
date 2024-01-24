@@ -5,8 +5,8 @@
         <div class="box__title">
           <div class="tabs">
             <ul>
-              <li v-for="tab in tabs" :key="tab.views" style="cursor: pointer;" :class="{ active: tab.views === activeTab }"
-                @click="changeTab(tab.views)">
+              <li v-for="tab in tabs" :key="tab.views" style="cursor: pointer;"
+                :class="{ active: tab.views === activeTab }" @click="changeTab(tab.views)">
                 <a class="tab_title">
                   <span> {{ tab.title }}</span>
                 </a>
@@ -19,21 +19,13 @@
           <div class="box__content__big">
             <div class="datepicker">
               <div class="date">
-                <VueDatePicker v-model="Fromdp" 
-                :enable-time-picker="false"
-                :format="dateformat"
-                prevent-min-max-navigation
-                :locale="locale"/>
+                <VueDatePicker v-model="Fromdp" :enable-time-picker="false" :format="dateformat"
+                  prevent-min-max-navigation :locale="locale" />
               </div>
 
               <div class="date">
-                <VueDatePicker v-model="Todp"
-                :enable-time-picker="false"
-                :min-date="Fromdp"
-                :max-date="to_maxDate"
-                :format="dateformat"
-                prevent-min-max-navigation
-                :locale="locale"/>
+                <VueDatePicker v-model="Todp" :enable-time-picker="false" :min-date="Fromdp" :max-date="to_maxDate"
+                  :format="dateformat" prevent-min-max-navigation :locale="locale" />
               </div>
 
               <button class="today" @click="todayPerformance">
@@ -60,8 +52,8 @@
 <script setup>
 
 import { shallowRef, ref, onMounted, inject, computed, watch } from 'vue';
-import { getYear, getMonth, getDate} from 'date-fns';
-import { addDays, subDays} from 'date-fns';
+import { getYear, getMonth, getDate } from 'date-fns';
+import { addDays, subDays } from 'date-fns';
 import chartTab from '../components/performanceView/chartTab.vue';
 import tableTab from '../components/performanceView/tableTab.vue';
 
@@ -101,7 +93,7 @@ const from_minDate = computed(() => {
 })
 
 const from_maxDate = computed(() => {
-  if(new Date() > Todp){
+  if (new Date() > Todp) {
     return Todp.value
   } else {
     return new Date();
@@ -109,7 +101,7 @@ const from_maxDate = computed(() => {
 })
 
 const to_maxDate = computed(() => {
-  if(addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDate(Fromdp.value)), 30) > new Date()){
+  if (addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDate(Fromdp.value)), 30) > new Date()) {
     return new Date();
   } else {
     return addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDate(Fromdp.value)), 30);
@@ -127,35 +119,41 @@ function todayPerformance() {
   }
 
   let performances = axios.post("performance/search-daily-chart", today)
-    .then((res) =>{
-      performance.value = res;
+    .then((res) => {
+      performance.value = res.data;
     })
     .catch((res) => {
-      performance.value = res;
+      performance.value = res.data;
     })
+
   return performance
+
+  return 1;
 }
 
 
 function periodPerformance() {
-  if(Fromdp.value == null || Todp.value == null){
+  if (Fromdp.value == null || Todp.value == null) {
     alert("Invalid Period!")
     return;
   }
 
   let period = {
-    start_ld : Fromdp.value,
+    start_ld: Fromdp.value,
     end_ld: Todp.value
   }
 
   let performances = axios.post("performance/search-period-chart", period)
-    .then((res) =>{
-      performance.value = res;
+    .then((res) => {
+      performance.value = res.data;
     })
     .catch((res) => {
-      performance.value = res;
+      performance.value = res.data;
     })
+
   return performance
+
+  return 1;
 }
 
 
@@ -166,6 +164,4 @@ onMounted(() => {
 
 </script>
 
-<style>
-
-</style>
+<style></style>
