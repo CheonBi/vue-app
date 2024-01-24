@@ -25,7 +25,7 @@ instance.interceptors.response.use(
     function (response) {
         //응답데이터 
         console.log('axios.js response : ' , response);
-        return response.data;
+        return response;
     },
 
     function (error){

@@ -21,7 +21,8 @@
               <div class="date">
                 <VueDatePicker v-model="Fromdp" 
                 :enable-time-picker="false"
-                :max-date="new Date()"
+                :format="dateformat"
+                prevent-min-max-navigation
                 :locale="locale"/>
               </div>
 
@@ -29,7 +30,8 @@
                 <VueDatePicker v-model="Todp"
                 :enable-time-picker="false"
                 :min-date="Fromdp"
-                :max-date="maxDate"
+                :max-date="to_maxDate"
+                :format="dateformat"
                 prevent-min-max-navigation
                 :locale="locale"/>
               </div>
@@ -38,13 +40,14 @@
                 금일
               </button>
 
-              <!-- <button class="search">
+              <button class="search" @click="periodPerformance">
+                검색
+              </button>
 
-              </button> -->
             </div>
             <div class="con">
               <KeepAlive>
-                <component :is="activeTab" v-bind:axiosRes="tabs">{{performance}}</component>
+                <component :is="activeTab" v-bind:axiosRes="tabs">{{ performance }}</component>
               </KeepAlive>
             </div>
           </div>
@@ -56,20 +59,24 @@
 
 <script setup>
 
-import { shallowRef, ref, reactive, onMounted, inject, computed } from 'vue';
-import { addDays, addMonths, getYear, getMonth, getDay} from 'date-fns';
+import { shallowRef, ref, onMounted, inject, computed, watch } from 'vue';
+import { getYear, getMonth, getDate} from 'date-fns';
+import { addDays, subDays} from 'date-fns';
 import chartTab from '../components/performanceView/chartTab.vue';
 import tableTab from '../components/performanceView/tableTab.vue';
 
+
+const axios = inject('$axios');
 const activeTab = shallowRef(chartTab);
+
 
 // datepicker`s refs
 const Fromdp = ref();
 const Todp = ref();
-const locale = ref('ko');
 
-const performance = ref();
-const axios = inject('$axios');
+const locale = ref('ko');
+const performance = ref("ok");
+const dateformat = ref("yyyy-MM-dd")
 
 // Array of Tabs Title & active component
 const tabs = [
@@ -88,50 +95,73 @@ function changeTab(tab) {
 }
 
 // Configure Datepicker enable date
-const maxDate = computed(() => {
-  if(addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDay(Fromdp.value)), 30) > new Date()){
+
+const from_minDate = computed(() => {
+  return subDays(new Date(getYear(Todp.value), getMonth(Todp.value), getDate(Todp.value)), 30)
+})
+
+const from_maxDate = computed(() => {
+  if(new Date() > Todp){
+    return Todp.value
+  } else {
+    return new Date();
+  }
+})
+
+const to_maxDate = computed(() => {
+  if(addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDate(Fromdp.value)), 30) > new Date()){
     return new Date();
   } else {
-    return addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDay(Fromdp.value)), 30);
+    return addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDate(Fromdp.value)), 30);
   }
 });
 
+watch(Fromdp, async (current, old) => {
+  console.log(current);
+})
 
 /* Request performances data from server */
 function todayPerformance() {
+  let today = {
+    today_ld: new Date(),
+  }
 
-  // if(Fromdp.value === null || Todp.value === null){
-  //   return "Disable period"
-  // }
+  let performances = axios.post("performance/search-daily-chart", today)
+    .then((res) =>{
+      performance.value = res;
+    })
+    .catch((res) => {
+      performance.value = res;
+    })
+  return performance
+}
 
-  // let period = {
-  //   start_ld : Fromdp.value,
-  //   end_ld: Todp.value
-  // }
 
-  let welcome = axios.post("/api/users");
-    welcome
-        .then((res) => {
-          performance.value = res;
-        })
-        .catch((res) =>{
-          performance.value = res;
-        });
-    return welcome
+function periodPerformance() {
+  if(Fromdp.value == null || Todp.value == null){
+    alert("Invalid Period!")
+    return;
+  }
 
-  // let performances = axios.post("performance/date", period)
-  //   .then((res) =>{
-  //     performance.value = res;
-  //   })
-  //   .catch((res) => {
-  //     performance.value = res;
-  //   })
+  let period = {
+    start_ld : Fromdp.value,
+    end_ld: Todp.value
+  }
+
+  let performances = axios.post("performance/search-period-chart", period)
+    .then((res) =>{
+      performance.value = res;
+    })
+    .catch((res) => {
+      performance.value = res;
+    })
+  return performance
 }
 
 
 
 onMounted(() => {
-
+  console.log(Fromdp.value)
 })
 
 </script>
