@@ -47,7 +47,7 @@
             </div>
             <div class="con">
               <KeepAlive>
-                <component :is="activeTab" v-bind:axiosRes="performanceResponse"></component>
+                <component :is="activeTab" :data="performanceResponse"></component>
               </KeepAlive>
             </div>
           </div>
@@ -66,7 +66,6 @@ import chartTab from '../components/performanceView/chartTab.vue';
 import tableTab from '../components/performanceView/tableTab.vue';
 
 const axios = inject('$axios');
-
 const activeTab = shallowRef(chartTab);
 
 // datepicker`s refs
@@ -74,7 +73,6 @@ const Fromdp = ref();
 const Todp = ref();
 
 const locale = ref('ko');
-const performance = ref("");
 const dateformat = ref("yyyy-MM-dd")
 
 // Array of Tabs Title & active component
@@ -89,17 +87,18 @@ const tabs = [
   },
 ]
 
+function changeTab(tab) {
+  activeTab.value = tab;
+}
+
+//Data for Props
 const tabData = ref({
   chartTab : Array,
   tableTab : Array
 })
 
-function changeTab(tab) {
-  activeTab.value = tab;
-}
 
 // Configure Datepicker enable date
-
 const from_minDate = computed(() => {
   return subDays(new Date(getYear(Todp.value), getMonth(Todp.value), getDate(Todp.value)), 30)
 })
@@ -120,54 +119,51 @@ const to_maxDate = computed(() => {
   }
 });
 
-/* Request performances data from server */
+/*
+
+*/
+
+
+
+/* Request Today performances */
 function todayperformanceChart(){
-  return axios.post("performance/search-daily-chart", {today: new Date()})
+  return axios.post("performance/search-daily-chart", {today: new Date()});
 }
 
 function todayperformanceTable(){
-  return axios.post("performance/search-daily-table", {today: new Date()})
+  return axios.post("performance/search-daily-table", {today: new Date()});
 }
 
 function todayPerformance(){
   Promise.all([todayperformanceChart(), todayperformanceTable()])
   .then((res) => {
-    tabData.value.chartTab = res[0].data
-    tabData.value.tableTab = res[1].data
+    tabData.value.chartTab = res[0].data;
+    tabData.value.tableTab = res[1].data;
   })
 }
 
-const performanceResponse = computed(() => {
-  return tabData.value[activeTab.value["__name"]]
-})
-
-
-
-
-function periodPerformance() {
-  if (Fromdp.value == null || Todp.value == null) {
-    alert("Invalid Period!")
-    return;
-  }
-
-  let period = {
-    start_ld: Fromdp.value,
-    end_ld: Todp.value
-  }
-
-  let performances = axios.post("performance/search-period-chart", period)
-    .then((res) => {
-      performance.value = res.data;
-    })
-    .catch((res) => {
-      performance.value = res.data;
-    })
-
-  return performance
-
-  return 1;
+/* Request Period performances */
+function periodPerformanceChart(){
+  return axios.post("performance/search-period-chart", {start_ld: Fromdp.value, end_ld: Todp.value});
 }
 
+
+function periodPerformanceTable(){
+  return axios.post("performance/search-period-table", {start_ld: Fromdp.value, end_ld: Todp.value});
+}
+
+function periodPerformance(){
+  Promise.all([periodPerformanceChart(), periodPerformanceTable()])
+  .then((res) => {
+    tabData.value.chartTab = res[0].data;
+    tabData.value.tableTab = res[1].data;
+  })
+}
+
+/* Response transfer to props */
+const performanceResponse = computed(() => {
+  return tabData.value[activeTab.value["__name"]];
+})
 
 
 onMounted(() => {

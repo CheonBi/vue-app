@@ -16,9 +16,10 @@
     </thead>
 
     <tbody>
-      {{ axiosRes }}
-      <tr v-for="(v, index) in props.axiosRes" :key="v.title">
-        
+      <tr v-for="(v, index) in props.data" :key="v.title">
+        <td>
+          {{ v.datetime }}
+        </td>
       </tr>
     </tbody>
     <!-- <span id="text" v-for="prop in props.axiosRes" :key="prop.id"> {{ prop.name }} </span> -->
@@ -26,7 +27,7 @@
 </template>
 
 <script setup>
-const props = defineProps(['axiosRes']);
+const props = defineProps(['data']);
 const performanceHeaders = [
   {
     name: "Fusce",
