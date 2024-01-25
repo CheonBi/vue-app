@@ -1,15 +1,14 @@
 <template>
     <div class="performance-tab">
-        <slot></slot>
         <div class="performance-content">
-            chart
+            {{ axiosRes }}
         </div>
     </div>
 
 </template>
 
 <script setup>
-const props = defineProps(['data'])
+const props = defineProps(['axiosRes'])
 
 </script>
 

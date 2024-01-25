@@ -19,13 +19,21 @@
           <div class="box__content__big">
             <div class="datepicker">
               <div class="date">
-                <VueDatePicker v-model="Fromdp" :enable-time-picker="false" :format="dateformat"
-                  prevent-min-max-navigation :locale="locale" />
+                <VueDatePicker v-model="Fromdp" 
+                  :enable-time-picker="false" 
+                  :format="dateformat"
+                  prevent-min-max-navigation 
+                  :locale="locale" />
               </div>
 
               <div class="date">
-                <VueDatePicker v-model="Todp" :enable-time-picker="false" :min-date="Fromdp" :max-date="to_maxDate"
-                  :format="dateformat" prevent-min-max-navigation :locale="locale" />
+                <VueDatePicker v-model="Todp"
+                  :enable-time-picker="false"
+                  :min-date="Fromdp" 
+                  :max-date="to_maxDate"
+                  :format="dateformat" 
+                  prevent-min-max-navigation 
+                  :locale="locale" />
               </div>
 
               <button class="today" @click="todayPerformance">
@@ -39,7 +47,7 @@
             </div>
             <div class="con">
               <KeepAlive>
-                <component :is="activeTab" v-bind:axiosRes="tabs">{{ performance }}</component>
+                <component :is="activeTab" v-bind:axiosRes="performanceResponse"></component>
               </KeepAlive>
             </div>
           </div>
@@ -57,17 +65,16 @@ import { addDays, subDays } from 'date-fns';
 import chartTab from '../components/performanceView/chartTab.vue';
 import tableTab from '../components/performanceView/tableTab.vue';
 
-
 const axios = inject('$axios');
-const activeTab = shallowRef(chartTab);
 
+const activeTab = shallowRef(chartTab);
 
 // datepicker`s refs
 const Fromdp = ref();
 const Todp = ref();
 
 const locale = ref('ko');
-const performance = ref("ok");
+const performance = ref("");
 const dateformat = ref("yyyy-MM-dd")
 
 // Array of Tabs Title & active component
@@ -81,6 +88,11 @@ const tabs = [
     views: tableTab,
   },
 ]
+
+const tabData = ref({
+  chartTab : Array,
+  tableTab : Array
+})
 
 function changeTab(tab) {
   activeTab.value = tab;
@@ -108,28 +120,28 @@ const to_maxDate = computed(() => {
   }
 });
 
-watch(Fromdp, async (current, old) => {
-  console.log(current);
+/* Request performances data from server */
+function todayperformanceChart(){
+  return axios.post("performance/search-daily-chart", {today: new Date()})
+}
+
+function todayperformanceTable(){
+  return axios.post("performance/search-daily-table", {today: new Date()})
+}
+
+function todayPerformance(){
+  Promise.all([todayperformanceChart(), todayperformanceTable()])
+  .then((res) => {
+    tabData.value.chartTab = res[0].data
+    tabData.value.tableTab = res[1].data
+  })
+}
+
+const performanceResponse = computed(() => {
+  return tabData.value[activeTab.value["__name"]]
 })
 
-/* Request performances data from server */
-function todayPerformance() {
-  let today = {
-    today_ld: new Date(),
-  }
 
-  let performances = axios.post("performance/search-daily-chart", today)
-    .then((res) => {
-      performance.value = res.data;
-    })
-    .catch((res) => {
-      performance.value = res.data;
-    })
-
-  return performance
-
-  return 1;
-}
 
 
 function periodPerformance() {
@@ -159,7 +171,7 @@ function periodPerformance() {
 
 
 onMounted(() => {
-  console.log(Fromdp.value)
+
 })
 
 </script>

@@ -16,13 +16,9 @@
     </thead>
 
     <tbody>
+      {{ axiosRes }}
       <tr v-for="(v, index) in props.axiosRes" :key="v.title">
-        <td>
-          {{ v.title }}
-        </td>
-        <td>
-          {{ v.views.__name }}
-        </td>
+        
       </tr>
     </tbody>
     <!-- <span id="text" v-for="prop in props.axiosRes" :key="prop.id"> {{ prop.name }} </span> -->
@@ -30,9 +26,6 @@
 </template>
 
 <script setup>
-
-import { ref } from 'vue';
-
 const props = defineProps(['axiosRes']);
 const performanceHeaders = [
   {
