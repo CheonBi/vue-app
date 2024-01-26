@@ -59,7 +59,7 @@
 
 <script setup>
 
-import { shallowRef, ref, onMounted, inject, computed, watch } from 'vue';
+import { shallowRef, ref, onMounted, inject, computed} from 'vue';
 import { getYear, getMonth, getDate } from 'date-fns';
 import { addDays, subDays } from 'date-fns';
 import chartTab from '../components/performanceView/chartTab.vue';
@@ -93,8 +93,8 @@ function changeTab(tab) {
 
 //Data for Props
 const tabData = ref({
-  chartTab : Array,
-  tableTab : Array
+  chartTab : [],
+  tableTab : []
 })
 
 
@@ -112,6 +112,7 @@ const from_maxDate = computed(() => {
 })
 
 const to_maxDate = computed(() => {
+  console.log("t")
   if (addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDate(Fromdp.value)), 30) > new Date()) {
     return new Date();
   } else {
