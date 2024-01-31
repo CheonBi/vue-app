@@ -30,7 +30,8 @@ instance.interceptors.response.use(
 
     function (error){
         //오류 응답 처리
-        return Promise.reject("Check API Connection");
+        console.log(error)
+        return Promise.reject("Check API Connection" + error);
     }
 )
 

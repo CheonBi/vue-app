@@ -20,8 +20,9 @@
             <div class="datepicker">
               <div class="date">
                 <VueDatePicker v-model="Fromdp" 
-                  :enable-time-picker="false" 
+                  :enable-time-picker="false"
                   :format="dateformat"
+                  :max-data="new Date()"
                   prevent-min-max-navigation 
                   :locale="locale" />
               </div>
@@ -29,9 +30,9 @@
               <div class="date">
                 <VueDatePicker v-model="Todp"
                   :enable-time-picker="false"
-                  :min-date="Fromdp" 
-                  :max-date="to_maxDate"
                   :format="dateformat" 
+                  :min-date="minDay"
+                  :max-date="new Date()"
                   prevent-min-max-navigation 
                   :locale="locale" />
               </div>
@@ -69,8 +70,8 @@ const axios = inject('$axios');
 const activeTab = shallowRef(chartTab);
 
 // datepicker`s refs
-const Fromdp = ref();
-const Todp = ref();
+const Fromdp = ref(new Date());
+const Todp = ref(new Date());
 
 const locale = ref('ko');
 const dateformat = ref("yyyy-MM-dd")
@@ -97,42 +98,28 @@ const tabData = ref({
   tableTab : []
 })
 
-
-// Configure Datepicker enable date
-const from_minDate = computed(() => {
-  return subDays(new Date(getYear(Todp.value), getMonth(Todp.value), getDate(Todp.value)), 30)
-})
-
-const from_maxDate = computed(() => {
-  if (new Date() > Todp) {
-    return Todp.value
-  } else {
-    return new Date();
-  }
-})
-
-const to_maxDate = computed(() => {
-  console.log("t")
-  if (addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDate(Fromdp.value)), 30) > new Date()) {
-    return new Date();
-  } else {
-    return addDays(new Date(getYear(Fromdp.value), getMonth(Fromdp.value), getDate(Fromdp.value)), 30);
-  }
-});
-
 /*
+  Configure Datepicker enable date
+
+  subDays(new Date(getYear([date]), getMonth([date]), getDate([date])), [number])
+  addDays(new Date(getYear([date]), getMonth([date]), getDate([date])), [number])
 
 */
 
+const minDay = computed(()=>{
+  return Fromdp.value;
+})
 
 
 /* Request Today performances */
 function todayperformanceChart(){
-  return axios.post("performance/search-daily-chart", {today: new Date()});
+  var period = {today_ld: new Date()} 
+  return axios.post("performance/search-daily-chart", period);
 }
 
 function todayperformanceTable(){
-  return axios.post("performance/search-daily-table", {today: new Date()});
+  var period = {today_ld: new Date()} 
+  return axios.post("performance/search-daily-table", period);
 }
 
 function todayPerformance(){
@@ -140,24 +127,35 @@ function todayPerformance(){
   .then((res) => {
     tabData.value.chartTab = res[0].data;
     tabData.value.tableTab = res[1].data;
+  }).catch((err) => {
+
   })
 }
 
 /* Request Period performances */
 function periodPerformanceChart(){
-  return axios.post("performance/search-period-chart", {start_ld: Fromdp.value, end_ld: Todp.value});
+  var period;
+  period = {start_ld: Fromdp.value, end_ld: Todp.value}
+  return axios.post("performance/search-period-chart", period);
+ 
 }
 
 
 function periodPerformanceTable(){
-  return axios.post("performance/search-period-table", {start_ld: Fromdp.value, end_ld: Todp.value});
+  var period;
+  period = {start_ld: Fromdp.value, end_ld: Todp.value}
+  return axios.post("performance/search-period-table", period);
+
 }
 
 function periodPerformance(){
   Promise.all([periodPerformanceChart(), periodPerformanceTable()])
   .then((res) => {
+    console.log(res)
     tabData.value.chartTab = res[0].data;
     tabData.value.tableTab = res[1].data;
+  }).catch((err) => {
+    alert(err)
   })
 }
 
