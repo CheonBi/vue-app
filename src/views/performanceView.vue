@@ -22,8 +22,7 @@
                 <VueDatePicker v-model="Fromdp" 
                   :enable-time-picker="false"
                   :format="dateformat"
-                  :max-data="new Date()"
-                  prevent-min-max-navigation 
+                  auto-apply
                   :locale="locale" />
               </div>
 
@@ -34,6 +33,7 @@
                   :min-date="minDay"
                   :max-date="new Date()"
                   prevent-min-max-navigation 
+                  auto-apply
                   :locale="locale" />
               </div>
 
@@ -73,7 +73,7 @@ const activeTab = shallowRef(chartTab);
 const Fromdp = ref(new Date());
 const Todp = ref(new Date());
 
-const locale = ref('ko');
+const locale = ref('ko-KR');
 const dateformat = ref("yyyy-MM-dd")
 
 // Array of Tabs Title & active component
@@ -105,7 +105,6 @@ const tabData = ref({
   addDays(new Date(getYear([date]), getMonth([date]), getDate([date])), [number])
 
 */
-
 const minDay = computed(()=>{
   return Fromdp.value;
 })
@@ -128,7 +127,7 @@ function todayPerformance(){
     tabData.value.chartTab = res[0].data;
     tabData.value.tableTab = res[1].data;
   }).catch((err) => {
-
+    alert(err)
   })
 }
 
@@ -139,7 +138,6 @@ function periodPerformanceChart(){
   return axios.post("performance/search-period-chart", period);
  
 }
-
 
 function periodPerformanceTable(){
   var period;
@@ -166,9 +164,39 @@ const performanceResponse = computed(() => {
 
 
 onMounted(() => {
-
 })
 
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+
+
+
+.date{
+  width: 200px;
+  --dp-font-size: 1.5rem;
+  --dp-font-family:       
+    'Pretendard',
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif; 
+
+  --dp-preview-font-size: 1.2rem;
+  .dp__action_buttons{
+    flex: 1;
+  }
+}
+
+
+
+
+</style>

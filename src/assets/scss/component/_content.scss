@@ -81,7 +81,7 @@ Box flex property
 
     .text{
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -120,12 +120,13 @@ $circle-point: 0.25rem;
 
   .chartA {
     flex: 1 1 100vh;
-    margin: 5px;
+    margin: 12px 5px;
 
     .datepicker {
       display: flex;
       margin: 5px 0;
       padding: 40px;
+      font-size: 1.5rem;
     }
     
     .big__box {
