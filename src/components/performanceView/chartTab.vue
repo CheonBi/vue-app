@@ -21,7 +21,7 @@ const data = ref([]);
 var result;
 
 watch(() => props.data, async(newData, oldData) =>{
-    data.value = newData.map((raw) => raw);
+    data.value = newData;
     result = dailyDataProcess(data.value)
     drawChart(result.dataArray, result.labels, 'my')
 })
@@ -39,4 +39,6 @@ onMounted(() => {
     padding: 0 20px;
     color: var(--vt-c-black);
 }
+
+
 </style>

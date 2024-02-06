@@ -136,14 +136,12 @@ function periodPerformanceChart(){
   var period;
   period = {start_ld: Fromdp.value, end_ld: Todp.value}
   return axios.post("performance/search-period-chart", period);
- 
 }
 
 function periodPerformanceTable(){
   var period;
   period = {start_ld: Fromdp.value, end_ld: Todp.value}
   return axios.post("performance/search-period-table", period);
-
 }
 
 function periodPerformance(){
@@ -164,6 +162,7 @@ const performanceResponse = computed(() => {
 
 
 onMounted(() => {
+
 })
 
 </script>

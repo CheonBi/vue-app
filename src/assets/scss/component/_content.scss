@@ -12,13 +12,11 @@ Box flex property
     &.big__box{
         display: flex;
         flex-direction: column;
-        flex: 1 0 35rem;
     }
     
     &.small__box{
         display: flex;
         flex-direction: column;
-        flex: 1 0 35rem;
     }
     
 }
@@ -33,11 +31,10 @@ Box flex property
 
     &__row{
         display: flex;
-        margin: 0;
     }
 
     &__big{
-        flex: 2.715 0 15rem;
+        flex: 2 0 20rem;
         flex-direction: column;
         display: flex;
         margin-left:5px;
@@ -45,7 +42,7 @@ Box flex property
     }
 
     &__small{
-        flex: 1.2 0 10rem;
+        flex: 1 0 10rem;
         flex-direction: column;
         display: flex;
         margin-left:5px;
@@ -57,13 +54,22 @@ Box flex property
 
 .box__content{
     &__big{
-        flex: 1;
+        &.dash{
+          position: relative;
+          height: 40vh;
+          width: 65vw;
+        }
     }
 
     &__small{
-        flex: 1;
+        &.dash{
+          position: relative;
+          height: 40vh;
+        }
     }
 }
+
+
 
 
 .box__title{
