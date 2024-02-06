@@ -65,6 +65,11 @@
 
 <script setup>
 
+import {ref, onMounted, inject} from 'vue'
+
+const axios = inject("$axios")
+const data = []
+
 </script>
 
 <style>

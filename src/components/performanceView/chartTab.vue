@@ -13,9 +13,7 @@
 
 <script setup>
 import { ref, onMounted, computed, isRef, watch } from 'vue';
-import { Chart } from 'chart.js/auto';
-import { dailyDataProcess, drawChart} from '@/plugins/chartAction.js';
-import 'chartjs-adapter-date-fns';
+import { dailyDataProcess, drawChart} from '@/plugins/performanceViewchartAction.js'
 
 const props = defineProps(['data']);
 const data = ref([]);

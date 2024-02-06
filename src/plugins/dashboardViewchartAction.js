@@ -1,5 +1,9 @@
-import { Chart } from 'chart.js/auto';
 import 'chartjs-adapter-date-fns';
+import { Chart } from 'chart.js/auto';
+
+/*
+DashBoardView
+*/
 
 function dailyDataProcess(rawdata){
 
@@ -19,9 +23,7 @@ function dailyDataProcess(rawdata){
             })
         }
     }
-
     return {labels, dataArray}
-
 }
 
 function drawChart(dataArray, labelArray, chartID){
