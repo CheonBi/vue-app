@@ -1,22 +1,14 @@
 <template>
-  <div class="box__wrapper__total">
-    <div class="box__wrapper__row chartA">
-      <div class="box__wrapper__big">
-        <div class="box__title">
-          <div class="tabs">
-            <ul>
-              <li v-for="tab in tabs" :key="tab.views" style="cursor: pointer;"
-                :class="{ active: tab.views === activeTab }" @click="changeTab(tab.views)">
-                <a class="tab_title">
-                  <span> {{ tab.title }}</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+  <div class="container">
+    <ul class="tabs">
+      <li v-for="tab in tabs" :key="tab.views" style="cursor: pointer;"
+        :class="{ active: tab.views === activeTab }" @click="changeTab(tab.views)">
+           {{ tab.title }}
+      </li>
+    </ul>
+    
 
-        <div class="box__base big__box">
-          <div class="box__content__big">
+        <div class="box__base performance">
             <div class="datepicker">
               <div class="date">
                 <VueDatePicker v-model="Fromdp" 
@@ -51,10 +43,7 @@
                 <component :is="activeTab" :data="performanceResponse"></component>
               </KeepAlive>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -169,11 +158,53 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 
+$circle-point: 0.25rem;
+$margin-top-point: 5px;
 
+ul.tabs{
+  margin: $margin-top-point 5px 0px 5px;
+  padding: 0px;
+  list-style: none;
+
+  li {
+    width: 20rem;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.3rem;
+    line-height: 4.9rem;
+    border-radius: 0.4rem 0.4rem 0 0;
+    background-color: var(--color-background-blue-soft);
+  }
+
+  li.active {
+    background-color: var(--vt-c-gray);
+    box-shadow: 1px 1px 1px var(--color-shadow-gray);
+  }
+
+}
+.performance {
+  margin: 0px 5px 15px 5px;
+  display: inherit;
+  border-radius: 0 $circle-point $circle-point $circle-point;
+
+  .datepicker {
+    margin: 15px 0;
+    padding: 1.5rem 4rem;
+  }
+
+  .con {
+    color: var(--vt-c-black);
+    padding: 0;
+    min-height: 75vh;
+  }
+}
 
 .date{
+  display: inline-block;
+  margin: 0px 2px;
   width: 200px;
-  --dp-font-size: 1.5rem;
+  --dp-font-size: 1.4rem;
   --dp-font-family:       
     'Pretendard',
     Inter,
@@ -188,14 +219,20 @@ onMounted(() => {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif; 
-
-  --dp-preview-font-size: 1.2rem;
-  .dp__action_buttons{
-    flex: 1;
-  }
 }
 
-
-
-
+button {
+  margin: 0px 2px;
+  background: #5E5DF0;
+  border-radius: 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: calc(1.4rem * 1.5);
+  padding: 7px 18px;
+  user-select: none;
+  border: 0;
+}
 </style>

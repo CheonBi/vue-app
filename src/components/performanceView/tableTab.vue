@@ -120,7 +120,6 @@ $scroll-bar-width: 1rem;
 
 .performance-content {
   /*
-
     padding 순서 : top right bottom left;
   */
 

@@ -1,11 +1,9 @@
 <template>
     <div class="performance-tab">
         <div class="performance-content">
-            <div class="chart-wrap">
-                <canvas id="my">
+            <canvas id="my">
 
-                </canvas>
-            </div>
+            </canvas>
         </div>
     </div>
 
@@ -36,6 +34,8 @@ onMounted(() => {
 <style lang="scss" scoped>
 
 .performance-tab, .performance-content{
+    min-height: inherit;
+    min-width: inherit;
     padding: 0 20px;
     color: var(--vt-c-black);
 }

@@ -72,6 +72,7 @@ function drawChart(dataArray, labelArray, chartID){
         options:{
             locale: 'kr-ko',
             responsive: true,
+            maintainAspectRatio: false,
             animation: false,
             spanGaps: 1000 * 60 * 60 * 24 * 1,
             elements:{
@@ -87,8 +88,17 @@ function drawChart(dataArray, labelArray, chartID){
                 decimation:{
                     // enabled: true,
                     // algorithm: 'min-max'
-                    
-                }
+                },
+                
+                legend:{
+                    display: true,
+                    position: 'bottom',
+                    labels:{
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        padding: 20
+                    }
+                },
             },
 
             scales:{

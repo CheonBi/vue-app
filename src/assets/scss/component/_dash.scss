@@ -1,0 +1,71 @@
+/*
+Box flex property
+*/
+.box__base{
+    margin: 5px;
+    padding : 10px;
+    border-radius : 5px;
+    background-color: var(--vt-c-gray);
+}
+
+.box__wrapper{
+    // &__total{
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-start;
+    //     flex: 1;
+    // }
+
+    &__row{
+        display: flex;
+    }
+
+    &__big{
+        flex: 2 0 20rem;
+    }
+
+    &__small{
+        flex: 1 0 10rem;
+    }
+
+}
+
+
+.box__content{
+    &__big{
+        &.dash{
+          position: relative;
+          height: 40vh;
+          width: 65vw;
+        }
+    }
+
+    &__small{
+        &.dash{
+          position: relative;
+          height: 40vh;
+        }
+    }
+}
+
+
+
+
+.box__title{
+    display: flex;
+    align-items: center;
+
+    .icon{
+        width: 2.1rem;
+        height: 2.1rem;
+        background: url('/src/assets/icon/ico_chart.png') center center no-repeat;
+        background-size: 100% 100%;
+        margin-right: 5px;
+        margin-top: 1.5px;
+    }
+
+    .text{
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+}
