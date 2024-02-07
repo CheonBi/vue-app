@@ -74,10 +74,16 @@ function drawChart(dataArray, labelArray, chartID){
             responsive: true,
             maintainAspectRatio: false,
             animation: false,
+            interaction:{
+                intersect: true,
+                mode: 'index'
+            },
             spanGaps: 1000 * 60 * 60 * 24 * 1,
             elements:{
                 point:{
-                    pointStyle: false,
+                    pointStyle: 'circle',
+                    radius: 1,
+                    hoverRadius: 5,
                 },
                 line: {
                     tension: 0.8
@@ -99,6 +105,11 @@ function drawChart(dataArray, labelArray, chartID){
                         padding: 20
                     }
                 },
+
+                tooltip:{
+                    position: 'nearest',
+                    xAlign: 'right'
+                }
             },
 
             scales:{

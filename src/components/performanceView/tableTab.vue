@@ -80,11 +80,11 @@ const performanceHeaders = [
     row: 2, col: 1,
   },
   {
-    name: "dataName3",
+    name: "dataName4",
     row: 2, col: 1,
   },
   {
-    name: "dataName4",
+    name: "dataName3",
     row: 1, col: 3,
   },
   {

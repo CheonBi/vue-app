@@ -9,12 +9,6 @@ Box flex property
 }
 
 .box__wrapper{
-    // &__total{
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: flex-start;
-    //     flex: 1;
-    // }
 
     &__row{
         display: flex;
@@ -29,7 +23,6 @@ Box flex property
     }
 
 }
-
 
 .box__content{
     &__big{
@@ -47,9 +40,6 @@ Box flex property
         }
     }
 }
-
-
-
 
 .box__title{
     display: flex;

@@ -10,9 +10,7 @@
             </div>
           </div>
           <div class="box__content__big dash">
-              <canvas id="my">
-
-              </canvas>
+              <canvas id="my"/>
           </div>
         </div>
       </div>
@@ -76,7 +74,7 @@ const data = ref([])
 var result;
 
 function mainChartAxios(){
-  axios.get("/dashboard/search-mainchart")
+  axios.get("/dashboard/realtime")
   .then((res) =>{
     console.log(res);
     data.value = res.data;
@@ -87,7 +85,6 @@ function mainChartAxios(){
 }
 
 watch(() => data.value, async(newData, oldData) =>{
-
     data.value = newData;
     console.log(data.value)
     result = dailyDataProcess(data.value)
