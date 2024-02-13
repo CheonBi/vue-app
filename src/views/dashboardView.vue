@@ -70,14 +70,26 @@ import { dailyDataProcess, drawChart} from '@/plugins/dashboardViewchartAction.j
 
 const axios = inject("$axios")
 const data = ref([])
+const sub = ref([])
 
 var result;
 
 function mainChartAxios(){
-  axios.get("/dashboard/realtime")
+  axios.get("/dashboard/realtime/main")
   .then((res) =>{
     console.log(res);
     data.value = res.data;
+  })
+  .catch((err) => {
+    alert(err);
+  })
+}
+
+function subChartAxios(){
+  axios.get("/dashboard/realtime/sub")
+  .then((res) =>{
+    console.log(res);
+    sub.value = res.data;
   })
   .catch((err) => {
     alert(err);
@@ -93,6 +105,7 @@ watch(() => data.value, async(newData, oldData) =>{
 
 onMounted(() => {
   mainChartAxios();
+  subChartAxios();
 })
 
 </script>

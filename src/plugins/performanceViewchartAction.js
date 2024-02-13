@@ -23,7 +23,6 @@ function dailyDataProcess(rawdata){
             })
         }
     }
-
     return {labels, dataArray}
 }
 

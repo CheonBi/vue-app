@@ -1,6 +1,5 @@
 import 'chartjs-adapter-date-fns';
 import { Chart } from 'chart.js/auto';
-import { isThisQuarter } from 'date-fns';
 
 /*
 DashBoardView
@@ -18,9 +17,9 @@ function dailyDataProcess(rawdata){
             dataArray.push({
                 dataName1: rawdata[i].dataName1,
                 dataName2: rawdata[i].dataName2,
-                dataName3: rawdata[i].dataName3,
-                dataName4: rawdata[i].dataName4,
-                dataName5: rawdata[i].dataName5,
+                dataName3: rawdata[i].dataName3A,
+                dataName4: rawdata[i].dataName5,
+                dataName5: rawdata[i].dataName6,
             })
         }
     }
@@ -52,7 +51,7 @@ function drawChart(dataArray, labelArray, chartID){
                     yAxisID: 'y',
                 },
                 {
-                    label: 'dataName3',
+                    label: 'dataName3A',
                     data: dataArray.map((x) => x.dataName3),
                     yAxisID: 'y3',
                 },
