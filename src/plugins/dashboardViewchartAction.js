@@ -2,7 +2,7 @@ import 'chartjs-adapter-date-fns';
 import { Chart } from 'chart.js/auto';
 
 /*
-DashBoardView
+    DashBoard MainChart
 */
 
 function dailyDataProcess(rawdata){
@@ -18,8 +18,8 @@ function dailyDataProcess(rawdata){
                 dataName1: rawdata[i].dataName1,
                 dataName2: rawdata[i].dataName2,
                 dataName3: rawdata[i].dataName3A,
-                dataName4: rawdata[i].dataName5,
-                dataName5: rawdata[i].dataName6,
+                dataName5: rawdata[i].dataName5,
+                dataName6: rawdata[i].dataName6,
             })
         }
     }
@@ -56,13 +56,13 @@ function drawChart(dataArray, labelArray, chartID){
                     yAxisID: 'y3',
                 },
                 {
-                    label: 'dataName4',
-                    data: dataArray.map((x) => x.dataName4),
+                    label: 'dataName5',
+                    data: dataArray.map((x) => x.dataName5),
                     yAxisID: 'y2',
                 },
                 {
-                    label: 'dataName5',
-                    data: dataArray.map((x) => x.dataName5),
+                    label: 'dataName6',
+                    data: dataArray.map((x) => x.dataName6),
                     yAxisID: 'y1',
                 },
             ]
@@ -82,7 +82,7 @@ function drawChart(dataArray, labelArray, chartID){
                 point:{
                     pointStyle: 'circle',
                     radius: 1,
-                    hoverRadius: 5,
+                    hoverRadius: 3,
                     hoverBorderWidth: 3,
                 },
                 line: {
@@ -117,7 +117,6 @@ function drawChart(dataArray, labelArray, chartID){
 
                 tooltip:{
                     position: 'nearest',
-                    xAlign: 'right'
                 }
                 
             },
@@ -209,7 +208,128 @@ function drawChart(dataArray, labelArray, chartID){
     new Chart(ctx, config);
 }
 
-export { dailyDataProcess, drawChart }
+
+/*
+    Sub Chart
+*/
+
+function subDataProcess(subdata){
+    var labels = [];
+    var dataArray = [];
+
+    if(subdata.length > 0) {
+        for(var i = 0; i<subdata.length; i++){
+            labels.push(subdata[i].label);
+
+            dataArray.push({
+                dataNameA: subdata[i].dataNameA,
+                dataNameB: subdata[i].dataNameB,
+                dataNameC: subdata[i].dataNameC,
+            })
+        }
+    }
+    return {labels, dataArray}
+}
+
+function drawSubChart(dataArray, labelArray, chartID){
+    var chartStatus = Chart.getChart(chartID);
+    if(chartStatus !== undefined){
+        chartStatus.destroy();
+    }
+
+    var ctx = document.getElementById(chartID);
+
+    var config = {
+        type: 'line',
+        data: {
+            labels: labelArray,
+            datasets:[
+                {
+                    label: 'dataNameA',
+                    data: dataArray.map((x) => x.dataNameA),
+                },
+                {
+                    label: 'dataNameB',
+                    data: dataArray.map((x) => x.dataNameB),
+                },
+                {
+                    label: 'dataNameC',
+                    data: dataArray.map((x) => x.dataNameC),
+                },
+            ]
+
+        },
+        options:{
+            locale: 'ko-kr',
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: false,
+            interaction:{
+                intersect: true,
+                mode: 'index'
+            },
+            elements:{
+                point:{
+                    pointStyle: 'circle',
+                    radius: 1,
+                    hoverRadius: 3,
+                    hoverBorderWidth: 3,
+                },
+                line: {
+                    tension: 0.8
+                }
+            },
+
+            layout:{
+                padding: {
+                    top: 40,
+                    bottom: 5,
+                    right: 10,
+                    left: 10,
+                }
+            },
+
+            plugins:{
+                decimation:{
+
+                },
+
+                legend:{
+                    display: true,
+                    position: 'bottom',
+                    labels:{
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        padding: 20
+                    }
+                },
+
+                tooltip:{
+                    position: 'nearest',
+                }
+                
+            },
+
+            scales:{
+                x: {
+                    type: 'linear',
+                    ticks:{
+                        
+                    }
+                },
+
+                y: {
+                    type: 'linear',
+                    display: true,
+                },
+            }
+        }
+    }
+    console.log(new Chart(ctx, config))
+
+}
+
+export { dailyDataProcess, drawChart, subDataProcess, drawSubChart}
 
 
 

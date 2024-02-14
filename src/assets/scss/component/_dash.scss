@@ -1,42 +1,57 @@
 /*
 Box flex property
+
 */
+
+.box__wrapper{
+    &__row{
+        display: flex;
+        min-height: 45vh;
+    }
+}
+
+
 .box__base{
     margin: 5px;
     padding : 10px;
     border-radius : 5px;
     background-color: var(--vt-c-gray);
-}
 
-.box__wrapper{
-
-    &__row{
+    &.big__box{
         display: flex;
-    }
-
-    &__big{
+        flex-direction: column;
         flex: 2 0 20rem;
     }
 
-    &__small{
+    &.small__box{
+        display: flex;
+        flex-direction: column;
         flex: 1 0 10rem;
     }
-
 }
 
 .box__content{
     &__big{
+        display: flex;
+        flex:1;
+
         &.dash{
-          position: relative;
-          height: 40vh;
-          width: 65vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
         }
     }
 
     &__small{
+        display: flex;
+        flex: 1;
+
         &.dash{
-          position: relative;
-          height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
         }
     }
 }
@@ -59,3 +74,47 @@ Box flex property
         font-size: 1.4rem;
     }
 }
+
+.tabular {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tabular-row{
+    display: flex;
+    flex: 1;
+}
+
+.tabular-content{
+    display: flex;
+    margin: 5px;
+    border-radius : 5px;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+    background-color: whitesmoke;
+    color: white;
+    flex: 1;
+
+    .content-left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        flex: 1;
+        background-color: var(  --vt-c-tabular-mute);
+        border-radius: 5px 0 0 5px;
+    }
+
+    .content-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        flex: 1;
+        background-color: var(  --vt-c-tabular-soft);
+        border-radius: 0 5px 5px 0;
+    }
+
+
+}
+

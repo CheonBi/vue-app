@@ -91,8 +91,7 @@ function drawChart(dataArray, labelArray, chartID){
 
             plugins:{
                 decimation:{
-                    // enabled: true,
-                    // algorithm: 'min-max'
+
                 },
                 
                 legend:{
@@ -107,7 +106,6 @@ function drawChart(dataArray, labelArray, chartID){
 
                 tooltip:{
                     position: 'nearest',
-                    xAlign: 'right'
                 }
             },
 

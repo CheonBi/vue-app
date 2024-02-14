@@ -14,12 +14,9 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 
-// app.config.globalProperties.axios = axios;
-// app.config.globalProperties.msg = 'hello';
+// app.config.globalProperties.msg = '';
 
 app.provide("$axios", axios);
 app.component("VueDatePicker", VueDatePicker);
-
-
 
 app.mount('#app')
