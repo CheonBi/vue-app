@@ -21,6 +21,7 @@ Box flex property
         display: flex;
         flex-direction: column;
         flex: 2 0 20rem;
+
     }
 
     &.small__box{
@@ -61,17 +62,17 @@ Box flex property
     align-items: center;
 
     .icon{
-        width: 2.1rem;
-        height: 2.1rem;
+        width: 2.4rem;
+        height: 2.4rem;
         background: url('/src/assets/icon/ico_chart.png') center center no-repeat;
         background-size: 100% 100%;
         margin-right: 5px;
-        margin-top: 1.5px;
+        margin-top: 1px;
     }
 
     .text{
-        font-weight: 700;
-        font-size: 1.4rem;
+        font-weight: 900;
+        font-size: 1.5rem;
     }
 }
 
@@ -79,6 +80,7 @@ Box flex property
     display: flex;
     flex-direction: column;
     flex: 1;
+    padding: 1.5rem;
 }
 
 .tabular-row{
@@ -92,7 +94,7 @@ Box flex property
     border-radius : 5px;
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
     background-color: whitesmoke;
-    color: white;
+    color: black;
     flex: 1;
 
     .content-left{
@@ -101,8 +103,37 @@ Box flex property
         align-items: center;
         justify-content: space-evenly;
         flex: 1;
-        background-color: var(  --vt-c-tabular-mute);
+        background-color: var(--vt-c-tabular-mute);
         border-radius: 5px 0 0 5px;
+
+        .realtime-title{
+            font-weight: 500;
+            font-size: 2rem;
+        }
+
+        .realtime-wrap{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+
+            .realtime-value{
+                font-weight: bold;
+                font-size: 2.2rem;
+                text-align: right;
+                float: left;
+            }
+
+            .realtime-unit{
+                color: blue;
+                font-size: 1.1rem;
+                align-self: flex-end;
+                margin-bottom: 0.3rem;
+                margin-left: 0.8rem;
+            }
+        }
+
     }
 
     .content-right{
@@ -111,10 +142,8 @@ Box flex property
         align-items: center;
         justify-content: space-evenly;
         flex: 1;
-        background-color: var(  --vt-c-tabular-soft);
+        background-color: var(--vt-c-tabular-soft);
         border-radius: 0 5px 5px 0;
     }
-
-
 }
 

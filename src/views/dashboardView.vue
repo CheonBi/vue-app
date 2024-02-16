@@ -42,7 +42,7 @@
                     <div class="realtime-title">제목 Dummy</div>
                     <div class="realtime-wrap">
                       <div class="realtime-value">12354.2</div>
-                      <div class="realtime-unit">Dummy</div>
+                      <div class="realtime-unit">Dummy Unit</div>
                     </div>
                   </div>
                   <div class="content-right">
