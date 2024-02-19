@@ -106,17 +106,18 @@ Box flex property
         background-color: var(--vt-c-tabular-mute);
         border-radius: 5px 0 0 5px;
 
-        .realtime-title{
+        .realtime-title {
             font-weight: 500;
             font-size: 2rem;
         }
 
-        .realtime-wrap{
+        .realtime-wrap {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
+            flex: 1;
 
             .realtime-value{
                 font-weight: bold;
@@ -133,10 +134,9 @@ Box flex property
                 margin-left: 0.8rem;
             }
         }
-
     }
 
-    .content-right{
+    .content-right {
         display: flex;
         flex-direction: column;
         align-items: center;

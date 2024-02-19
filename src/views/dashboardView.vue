@@ -52,20 +52,35 @@
                     <div class="detail-time">12 : 12 : 12</div>
                   </div>
                 </div>
+
                 <div class="tabular-content">
                   <div class="content-left">
-
+                    <div class="realtime-title">제목 Dummy</div>
+                    <div class="realtime-wrap">
+                      <div class="realtime-value">12354.2</div>
+                      <div class="realtime-unit">Dummy Unit</div>
+                    </div>
                   </div>
                   <div class="content-right">
-
+                    <div class="detail-value">max: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
+                    <div class="detail-value">min: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
                   </div>
                 </div>
                 <div class="tabular-content">
                   <div class="content-left">
-
+                    <div class="realtime-title">제목 Dummy</div>
+                    <div class="realtime-wrap">
+                      <div class="realtime-value">12354.2</div>
+                      <div class="realtime-unit">Dummy Unit</div>
+                    </div>
                   </div>
                   <div class="content-right">
-
+                    <div class="detail-value">max: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
+                    <div class="detail-value">min: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
                   </div>
                 </div>
               </div>
@@ -73,26 +88,48 @@
               <div class="tabular-row">
                 <div class="tabular-content">
                   <div class="content-left">
-
+                    <div class="realtime-title">제목 Dummy</div>
+                    <div class="realtime-wrap">
+                      <div class="realtime-value">12354.2</div>
+                      <div class="realtime-unit">Dummy Unit</div>
+                    </div>
                   </div>
                   <div class="content-right">
+                    <div class="detail-value">max: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
+                    <div class="detail-value">min: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
+                  </div>
+                </div>
 
+                <div class="tabular-content">
+                  <div class="content-left">
+                    <div class="realtime-title">제목 Dummy</div>
+                    <div class="realtime-wrap">
+                      <div class="realtime-value">12354.2</div>
+                      <div class="realtime-unit">Dummy Unit</div>
+                    </div>
+                  </div>
+                  <div class="content-right">
+                    <div class="detail-value">max: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
+                    <div class="detail-value">min: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
                   </div>
                 </div>
                 <div class="tabular-content">
                   <div class="content-left">
-
+                    <div class="realtime-title">제목 Dummy</div>
+                    <div class="realtime-wrap">
+                      <div class="realtime-value">12354.2</div>
+                      <div class="realtime-unit">Dummy Unit</div>
+                    </div>
                   </div>
                   <div class="content-right">
-
-                  </div>
-                </div>
-                <div class="tabular-content">
-                  <div class="content-left">
-
-                  </div>
-                  <div class="content-right">
-
+                    <div class="detail-value">max: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
+                    <div class="detail-value">min: 123456</div>
+                    <div class="detail-time">12 : 12 : 12</div>
                   </div>
                 </div>
               </div>
